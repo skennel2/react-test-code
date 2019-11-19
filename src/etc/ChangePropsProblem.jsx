@@ -6,13 +6,12 @@ export default class ChangePropsProblem extends Component {
     }
 
     handleClick() {
-        // props 오브젝트 내부의 값이 변경되었다.
-        // props의 값이 변경된것은 아니지만 내부의 값이 변경된것이다. 
-        // 다시 렌더링 된다면 변경된값이 바인딩 될것이다.
-        Object.assign(this.props.data, {
-            value: 'changed by handler'
-        });
+        // props의 값은 readonly라 직접적인 변경은 불가능하다.
+        // this.props.data = {
+        //     value: 'changed by handler'
+        // };
 
+        this.props.data.value = 'changed by handler';
         this.setState({
             renderToggler: !this.state.renderToggler
         });
