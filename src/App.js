@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import NumberPrinter from './RenderProps/NumberPrinterWithPrefix'
 import RefTestComponent from './ref/RefTestComponent'
-import SyntheticEventTestComponent from './SyntheticEvent/SyntheticEventTestComponent'
+import SyntheticEventTestComponent from './Event/SyntheticEventTestComponent'
+import ChangePropsProblem from './etc/ChangePropsProblem'
 
 export default class App extends Component {
   render() {
@@ -15,6 +16,9 @@ export default class App extends Component {
         </div>
         <div>
           <SyntheticEventTestComponent></SyntheticEventTestComponent>
+        </div>
+        <div>
+          <ChangePropsProblem data={{value: 'passed by props'}} />
         </div>
       </>
     )

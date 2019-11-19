@@ -7,6 +7,7 @@ const style = {
 
 /**
  * https://ko.reactjs.org/docs/events.html
+ * TODO: 이벤트 캡쳐링, 버블링의 개념
  */
 export default class SyntheticEventTestComponent extends Component {
 
