@@ -39,8 +39,7 @@ export default class RefTestComponent extends Component {
 
                 <div>
                     <button onClick={this.onClickButtonButton.bind(this)}>div에 포커스 주기</button>
-                    <div
-                        ref={this.divRef}
+                    <div ref={this.divRef}
                         tabIndex={-1} // 탭인덱스를 주면 div에도 포커스를 줄수 있고 onFocus이벤트도 사용할 수 있다. TODO: 왜? tabIndex는 정확히 뭐지
                         onFocus={this.onFocusDiv.bind(this)}>
                         div의 영역

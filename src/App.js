@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import NumberPrinter from './RenderProps/NumberPrinterWithPrefix'
 import RefTestComponent from './ref/RefTestComponent'
+import SyntheticEventTestComponent from './SyntheticEvent/SyntheticEventTestComponent'
 
 export default class App extends Component {
   render() {
@@ -11,6 +12,9 @@ export default class App extends Component {
         </div>
         <div>
           <RefTestComponent></RefTestComponent>
+        </div>
+        <div>
+          <SyntheticEventTestComponent></SyntheticEventTestComponent>
         </div>
       </>
     )
