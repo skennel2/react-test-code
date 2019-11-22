@@ -3,6 +3,8 @@ import NumberPrinter from './RenderProps/NumberPrinterWithPrefix'
 import RefTestComponent from './ref/RefTestComponent'
 import SyntheticEventTestComponent from './Event/SyntheticEventTestComponent'
 import ChangePropsProblem from './etc/ChangePropsProblem'
+import LifeCycleClient from './LifeCycle/LifeCycleClient'
+import ExceptionHandling from './ExceptionHandling/ExceptionHandling'
 
 export default class App extends Component {
   render() {
@@ -19,6 +21,12 @@ export default class App extends Component {
         </div>
         <div>
           <ChangePropsProblem data={{value: 'passed by props'}} />
+        </div>
+        <div>
+          <LifeCycleClient></LifeCycleClient>
+        </div>
+        <div>
+          <ExceptionHandling></ExceptionHandling>
         </div>
       </>
     )
