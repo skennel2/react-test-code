@@ -5,6 +5,7 @@ import SyntheticEventTestComponent from './Event/SyntheticEventTestComponent'
 import ChangePropsProblem from './etc/ChangePropsProblem'
 import LifeCycleClient from './LifeCycle/LifeCycleClient'
 import ExceptionHandling from './ExceptionHandling/ExceptionHandling'
+import RefAsPropTestComponent from './ref_as_prop/RefAsPropTestComponent'
 
 export default class App extends Component {
   render() {
@@ -27,6 +28,9 @@ export default class App extends Component {
         </div>
         <div>
           <ExceptionHandling></ExceptionHandling>
+        </div>
+        <div>
+          <RefAsPropTestComponent />
         </div>
       </>
     )
