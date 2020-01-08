@@ -14,37 +14,37 @@ export default class RefTestComponent extends Component {
         console.log(this.divRef);
     }
 
-    onClickButtonInput(e) {
+    handleClickButtonInput(e) {
         //TODO: current의 의미는 무엇일까?
         this.inputRef.current.focus();
     }
 
-    onClickButtonButton(e) {
+    handleClickButtonButton(e) {
         this.divRef.current.focus();
     }
 
-    onFocusDiv() {
+    handleFocusDiv() {
         console.log('div에 포커스');
     }
 
     render() {
         return (
             <>
-                <div>
-                    <button onClick={this.onClickButtonInput.bind(this)}>인풋에 포커스 주기</button>
+                <section>
+                    <button onClick={this.handleClickButtonInput.bind(this)}>인풋에 포커스 주기</button>
                     <div>
                         <input ref={this.inputRef} type={"text"} />
                     </div>
-                </div>
+                </section>
 
-                <div>
-                    <button onClick={this.onClickButtonButton.bind(this)}>div에 포커스 주기</button>
+                <section>
+                    <button onClick={this.handleClickButtonButton.bind(this)}>div에 포커스 주기</button>
                     <div ref={this.divRef}
                         tabIndex={-1} // 탭인덱스를 주면 div에도 포커스를 줄수 있고 onFocus이벤트도 사용할 수 있다. TODO: 왜? tabIndex는 정확히 뭐지
-                        onFocus={this.onFocusDiv.bind(this)}>
+                        onFocus={this.handleFocusDiv.bind(this)}>
                         div의 영역
                     </div>
-                </div>
+                </section>
             </>
         )
     }
