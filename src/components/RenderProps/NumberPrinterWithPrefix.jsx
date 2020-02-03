@@ -14,6 +14,9 @@ export default class NumberPrinterWithPrefix extends Component {
     }
 }
 
+/**
+ * 카운트되는 로직만 담고있으며 렌더링되는 것은 render props로 노출한다.
+ */
 class NumberCounter extends Component {
     state = {
         cnt: 0
@@ -33,4 +36,8 @@ class NumberCounter extends Component {
             </div>
         )
     }
+}
+
+NumberCounter.propsType = {
+
 }

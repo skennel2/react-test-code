@@ -7,6 +7,7 @@ import LifeCycleClient from '../components/LifeCycle/LifeCycleClient';
 import ExceptionHandling from '../components/ExceptionHandling/ExceptionHandling';
 import SyntheticEventTestComponent from '../components/Event/SyntheticEventTestComponent';
 import ChangePropsProblem from '../components/etc/ChangePropsProblem';
+import PropTypesTestClient, { HasPropTypesComponent } from '../components/propTypes/PropTypesClient';
 
 export default {
     title: 'RefAsPropTestComponent',
@@ -30,17 +31,17 @@ export const RenderProps = () => {
     );
 };
 
-export const ref = () => {
-    return (
-        <RefTestComponent />
-    )
-}
+// export const ref = () => {
+//     return (
+//         <RefTestComponent />
+//     )
+// }
 
-export const 라이프사이클 = () => {
-    return (
-        <LifeCycleClient />
-    )
-}
+// export const 라이프사이클 = () => {
+//     return (
+//         <LifeCycleClient />
+//     )
+// }
 
 export const 예외처리 = () => {
     return (
@@ -57,6 +58,15 @@ export const 이벤트처리 = () => {
 export const Props_변경문제 = () => {
     return (
         <ChangePropsProblem data={{value: 'passed by props'}}/>
+    )
+}
+
+export const PropTypes = () => {
+    return (
+        <>
+            <PropTypesTestClient />
+            <HasPropTypesComponent />
+        </>
     )
 }
 
