@@ -1,6 +1,20 @@
 import React, { Component } from 'react'
 
-export default class NumberCounter extends Component {
+export default class NumberPrinterWithPrefix extends Component {
+    renderNumberCounter(state){
+        return (
+            <div>{this.props.prefix + ' ' + state.cnt}</div>
+        )
+    }
+
+    render() {
+        return (
+            <NumberCounter render={this.renderNumberCounter.bind(this)} />
+        )
+    }
+}
+
+class NumberCounter extends Component {
     state = {
         cnt: 0
     }

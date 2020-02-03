@@ -4,10 +4,6 @@ import PropTypes from 'prop-types'
 export default class RefAsPropTestComponent extends Component {
     myRef = React.createRef();
 
-    constructor() {
-        super();
-    }
-
     printHello() {
         console.log('hello');
     }
