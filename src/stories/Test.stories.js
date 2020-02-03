@@ -65,7 +65,7 @@ export const PropTypes = () => {
     return (
         <>
             <PropTypesTestClient />
-            <HasPropTypesComponent />
+            {/* <HasPropTypesComponent /> */}
         </>
     )
 }
