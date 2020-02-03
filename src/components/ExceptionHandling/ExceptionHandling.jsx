@@ -14,8 +14,8 @@ export default class ExceptionHandling extends Component {
     }
 
     render() {
-        if(this.state.error) {
-            return(<div>error 발생</div>)
+        if (this.state.error) {
+            return (<div>error 발생</div>)
         }
 
         return (
@@ -27,8 +27,8 @@ export default class ExceptionHandling extends Component {
 }
 
 class Child extends Component {
-    render(){
-        return(
+    render() {
+        return (
             <div>
                 <ChildOfChild />
             </div>
@@ -37,13 +37,13 @@ class Child extends Component {
 }
 
 class ChildOfChild extends Component {
-    occurError(){
+    occurError() {
         throw new Error('occurError');
     }
 
-    render(){
+    render() {
         this.occurError();
-        return(
+        return (
             <div>
                 Child of Child
             </div>

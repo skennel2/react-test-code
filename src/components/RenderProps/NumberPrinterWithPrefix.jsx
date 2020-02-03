@@ -37,7 +37,3 @@ class NumberCounter extends Component {
         )
     }
 }
-
-NumberCounter.propsType = {
-
-}

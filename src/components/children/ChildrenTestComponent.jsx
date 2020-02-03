@@ -4,7 +4,7 @@ export default class ChildrenTestComponent extends Component {
     render() {
         return (
             <div>
-                
+
             </div>
         )
     }
@@ -25,7 +25,7 @@ class Children extends Component {
     render() {
         return (
             <div>
-                
+
             </div>
         )
     }
