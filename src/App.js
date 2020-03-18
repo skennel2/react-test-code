@@ -6,11 +6,14 @@ import ChangePropsProblem from './components/etc/ChangePropsProblem'
 import LifeCycleClient from './components/LifeCycle/LifeCycleClient'
 import ExceptionHandling from './components/ExceptionHandling/ExceptionHandling'
 import RefAsPropTestComponent from './components/ref_as_prop/RefAsPropTestComponent'
+import PureComponentContainer from './components/PureComponent/PureComponentContainer'
 
 export default class App extends Component {
   render() {
     return (
-      <div></div>
+      <div>
+          <PureComponentContainer ></PureComponentContainer>
+      </div>
     )
   }
 }
