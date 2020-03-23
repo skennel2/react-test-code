@@ -4,7 +4,10 @@ import PropTypes from 'prop-types'
 export default class PureComponentContainer extends Component {
     state = {
         value: 'Hello',
-        stringValue: 'Hello'
+        stringValue: 'this is string value',
+        normarObjectValue: {
+            value: '1',
+        }
     }
 
     /**
@@ -20,14 +23,30 @@ export default class PureComponentContainer extends Component {
         })
     }
 
-    /**
-     * SomePureComponent는 렌더링 되지 않는다. 
-     * 새로운 string을 생성해서 할당해도 얕은비교가 성립하는듯하다.
-     */
     onClickChangeStringValue = (e) => {
+        // PureComponent 렌더링 O
+        // this.setState({
+        //     stringValue: new String(this.state.stringValue)
+        // });
+
+        // PureComponent 렌더링 X
         this.setState({
-            stringValue: new String(this.state.stringValue)
-        })
+            stringValue: this.state.stringValue
+        });
+    }
+
+    onClickChangeNormalObject = (e) => {
+        // 동일한 오브젝트 할당시
+        // PureComponent 렌더링 O
+        this.setState({
+            normarObjectValue: {
+                value: '1'
+            }
+        });
+    }
+
+    handleCallback = () => {
+
     }
 
     render() {
@@ -41,12 +60,23 @@ export default class PureComponentContainer extends Component {
                     string state 변경
                 </button>
 
+                <button onClick={this.onClickChangeNormalObject}>
+                    normal object state 변경
+                </button>
+
                 <div>
                     {this.state.value}
                     <SomePureComponent
-                        stringValue={this.state.childValue} />
-                    <SomeNormalComponent 
-                        stringValue={this.state.childValue} />
+                        stringValue={this.state.stringValue}
+                        normarObjectValue={this.state.normarObjectValue} 
+                        //callBack={(e) => {}} // 계속 새로운 콜백이 생성되어 무조건 렌더링을 탄다.
+                        callBack={this.handleCallback} // 계속 새로운 콜백이 생성되어 무조건 렌더링을 탄다.
+                    />
+                    <SomeNormalComponent
+                        stringValue={this.state.stringValue}
+                        normarObjectValue={this.state.normarObjectValue}
+                        callBack={(e) => {}} 
+                    />
                 </div>
             </div>
         )
@@ -57,8 +87,17 @@ class SomePureComponent extends React.PureComponent {
     render() {
         console.log('SomePureComponent render')
         return (
-            <div>
-                {this.props.stringValue}
+            <div style={{
+                padding: '10px',
+                border: '1px solid black'
+            }}>
+                <h3>PureComponent</h3>
+                <div>
+                    {this.props.stringValue}
+                </div>
+                <div>
+                    {this.props.normarObjectValue.value}
+                </div>
             </div>
         )
     }
@@ -68,8 +107,17 @@ class SomeNormalComponent extends React.Component {
     render() {
         console.log('SomeComponent render')
         return (
-            <div>
-                {this.props.stringValue}
+            <div style={{
+                padding: '10px',
+                border: '1px solid black'
+            }}>
+                <h3>Component</h3>
+                <div>
+                    {this.props.stringValue}
+                </div>
+                <div>
+                    {this.props.normarObjectValue.value}
+                </div>                
             </div>
         )
     }
