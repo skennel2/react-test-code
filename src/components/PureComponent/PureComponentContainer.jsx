@@ -70,7 +70,7 @@ export default class PureComponentContainer extends Component {
                         stringValue={this.state.stringValue}
                         normarObjectValue={this.state.normarObjectValue} 
                         //callBack={(e) => {}} // 계속 새로운 콜백이 생성되어 무조건 렌더링을 탄다.
-                        callBack={this.handleCallback} // 계속 새로운 콜백이 생성되어 무조건 렌더링을 탄다.
+                        callBack={this.handleCallback}
                     />
                     <SomeNormalComponent
                         stringValue={this.state.stringValue}

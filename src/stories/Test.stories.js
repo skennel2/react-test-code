@@ -8,9 +8,10 @@ import ExceptionHandling from '../components/ExceptionHandling/ExceptionHandling
 import SyntheticEventTestComponent from '../components/Event/SyntheticEventTestComponent';
 import ChangePropsProblem from '../components/etc/ChangePropsProblem';
 import PropTypesTestClient, { HasPropTypesComponent } from '../components/propTypes/PropTypesClient';
+import PureComponentContainer from '../components/PureComponent/PureComponentContainer';
 
 export default {
-    title: 'RefAsPropTestComponent',
+    title: '테스트',
     component: RefAsPropTestComponent,
     // decorators: [withKnobs],
     // parameters: {
@@ -42,6 +43,12 @@ export const RenderProps = () => {
 //         <LifeCycleClient />
 //     )
 // }
+
+export const PureComponent = () => {
+    return (
+        <PureComponentContainer />
+    )
+}
 
 export const 예외처리 = () => {
     return (
