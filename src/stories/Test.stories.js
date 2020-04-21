@@ -9,6 +9,7 @@ import SyntheticEventTestComponent from '../components/Event/SyntheticEventTestC
 import ChangePropsProblem from '../components/etc/ChangePropsProblem';
 import PropTypesTestClient, { HasPropTypesComponent } from '../components/propTypes/PropTypesClient';
 import PureComponentContainer from '../components/PureComponent/PureComponentContainer';
+import ContextProvider from '../components/context/ContextProvider';
 
 export default {
     title: '테스트',
@@ -74,6 +75,12 @@ export const PropTypes = () => {
             <PropTypesTestClient />
             {/* <HasPropTypesComponent /> */}
         </>
+    )
+}
+
+export const Context = () => {
+    return (
+        <ContextProvider />
     )
 }
 
