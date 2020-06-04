@@ -10,6 +10,7 @@ import ChangePropsProblem from '../components/etc/ChangePropsProblem';
 import PropTypesTestClient, { HasPropTypesComponent } from '../components/propTypes/PropTypesClient';
 import PureComponentContainer from '../components/PureComponent/PureComponentContainer';
 import ContextProvider from '../components/context/ContextProvider';
+import StateComponentProblem from '../components/etc/StateComponentProblem';
 
 export default {
     title: '테스트',
@@ -69,6 +70,13 @@ export const Props_변경문제 = () => {
     )
 }
 
+export const State로_관리되는_컴포넌트문제 = () => {
+    return (
+        <StateComponentProblem />
+    )
+}
+
+
 export const PropTypes = () => {
     return (
         <>
@@ -81,6 +89,12 @@ export const PropTypes = () => {
 export const Context = () => {
     return (
         <ContextProvider />
+    )
+}
+
+export const LifeCycle = () => {
+    return (
+        <LifeCycleClient />
     )
 }
 

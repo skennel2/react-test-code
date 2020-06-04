@@ -2,24 +2,40 @@ import React, { Component } from 'react'
 
 export default class LifeCycleClient extends Component {
     state = {
-        data: 1
+        data: 1,
+        data2: 2,
     }
 
-    handleClickButton() {
+    handleClickButton = () => {
         this.setState({
             data: this.state.data + 1
+        })
+    }
+
+    handleClickButton2 = () => {
+        this.setState({
+            data2: this.state.data2 + 1
         })
     }
 
     render() {
         return (
             <>
-                <div>
-                    <button onClick={this.handleClickButton.bind(this)}>props 바꾸기</button>
+                <div style={{ padding: '10px', margin: '10px', border: '1px solid black' }}>
+                    <h2>부모</h2>
+                    <div>
+                        <button onClick={this.handleClickButton}>자식에 영향있는 state 변경</button>
+                        <button onClick={this.handleClickButton2}>자식에 영향없는 state 변경</button>
+                    </div>
+                    <div>
+                        <div>
+                            data2: {this.state.data2}
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <LifeCycleTestComponent data={this.state.data} />
-                </div>
+
+                {/* 현재 컴포넌트에서 setState가 일어나면 실제 영향이 없는 것이라도 무조건 렌더링과정이 진행된다. */}
+                <LifeCycleTestComponent data={this.state.data} />
             </>
         )
     }
@@ -30,6 +46,10 @@ export class LifeCycleTestComponent extends Component {
         super(props);
 
         alert('constructor');
+    }
+
+    state = {
+        data: 1
     }
 
     /**
@@ -72,12 +92,24 @@ export class LifeCycleTestComponent extends Component {
         alert('componentDidUpdate');
     }
 
+    handleClickButton = () => {
+        this.setState({
+            data: this.state.data + 1
+        })
+    }
+
     render() {
         alert('render');
 
         return (
-            <div>
-                props로 전달받은값 {this.props.data}
+            <div style={{ padding: '10px', margin: '10px', border: '1px solid black' }}>
+                <h2>자식</h2>
+                <div>
+                    <button onClick={this.handleClickButton}>자식의 state 바꾸기</button>
+                </div>
+                <div>
+                    props로 전달받은 값 data {this.props.data}
+                </div>
             </div>
         )
     }
