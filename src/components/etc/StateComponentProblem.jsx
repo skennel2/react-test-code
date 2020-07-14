@@ -47,13 +47,16 @@ export default class StateComponentProblem extends Component {
                     }
                     }
                 />
+
+                <hr></hr>
+
+                {this.getComponent()}
             </div>
         )
     }
 }
 
 class TestComponent extends Component {
-
     render() {
         return (
             <>
