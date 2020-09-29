@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-export default class PureComponentContainer extends Component {
+export default class TestClient extends Component {
     state = {
         value: 'Hello',
         stringValue: 'this is string value',
@@ -31,9 +31,15 @@ export default class PureComponentContainer extends Component {
 
         // PureComponent 렌더링 X
         this.setState({
-            stringValue: this.state.stringValue
+            stringValue: this.state.stringValue + '!'
         });
     }
+
+    onClickChangeSameStringValue = (e) => {
+        this.setState({
+            stringValue: this.state.stringValue
+        });
+    } 
 
     onClickChangeNormalObject = (e) => {
         // 동일한 오브젝트 할당시
@@ -45,11 +51,18 @@ export default class PureComponentContainer extends Component {
         });
     }
 
+    onClickChangeSameNormalObject = (e) => {
+        this.setState({
+            normarObjectValue: this.state.normarObjectValue
+        });
+    }
+
     handleCallback = () => {
 
     }
 
     render() {
+        alert('PureComponentContainer render')
         return (
             <div>
                 <button onClick={this.onClickChangeContainerValue}>
@@ -60,9 +73,17 @@ export default class PureComponentContainer extends Component {
                     string state 변경
                 </button>
 
+                <button onClick={this.onClickChangeSameStringValue}>
+                    string state 변경 (같은값)
+                </button>                
+
                 <button onClick={this.onClickChangeNormalObject}>
                     normal object state 변경
                 </button>
+
+                <button onClick={this.onClickChangeSameNormalObject}>
+                    normal object state 변경 (같은값)
+                </button>                
 
                 <div>
                     {this.state.value}
@@ -85,7 +106,7 @@ export default class PureComponentContainer extends Component {
 
 class SomePureComponent extends React.PureComponent {
     render() {
-        console.log('SomePureComponent render')
+        alert('SomePureComponent render')
         return (
             <div style={{
                 padding: '10px',
@@ -105,7 +126,7 @@ class SomePureComponent extends React.PureComponent {
 
 class SomeNormalComponent extends React.Component {
     render() {
-        console.log('SomeComponent render')
+        alert('SomeComponent render')
         return (
             <div style={{
                 padding: '10px',
