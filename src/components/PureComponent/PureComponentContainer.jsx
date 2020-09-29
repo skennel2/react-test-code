@@ -39,7 +39,7 @@ export default class TestClient extends Component {
         this.setState({
             stringValue: this.state.stringValue
         });
-    } 
+    }
 
     onClickChangeNormalObject = (e) => {
         // 동일한 오브젝트 할당시
@@ -75,7 +75,7 @@ export default class TestClient extends Component {
 
                 <button onClick={this.onClickChangeSameStringValue}>
                     string state 변경 (같은값)
-                </button>                
+                </button>
 
                 <button onClick={this.onClickChangeNormalObject}>
                     normal object state 변경
@@ -83,20 +83,20 @@ export default class TestClient extends Component {
 
                 <button onClick={this.onClickChangeSameNormalObject}>
                     normal object state 변경 (같은값)
-                </button>                
+                </button>
 
                 <div>
                     {this.state.value}
                     <SomePureComponent
                         stringValue={this.state.stringValue}
-                        normarObjectValue={this.state.normarObjectValue} 
+                        normarObjectValue={this.state.normarObjectValue}
                         //callBack={(e) => {}} // 계속 새로운 콜백이 생성되어 무조건 렌더링을 탄다.
                         callBack={this.handleCallback}
                     />
                     <SomeNormalComponent
                         stringValue={this.state.stringValue}
                         normarObjectValue={this.state.normarObjectValue}
-                        callBack={(e) => {}} 
+                        callBack={(e) => { }}
                     />
                 </div>
             </div>
@@ -138,7 +138,7 @@ class SomeNormalComponent extends React.Component {
                 </div>
                 <div>
                     {this.props.normarObjectValue.value}
-                </div>                
+                </div>
             </div>
         )
     }
