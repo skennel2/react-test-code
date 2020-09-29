@@ -11,19 +11,37 @@ const style = {
  */
 export default class SyntheticEventTestComponent extends Component {
 
-    onClickParent() {
-        console.log('onClickParent')
+    onClickParent(e) {
+        alert('onClick Parent')
     }
 
     onClickChild(e) {
-        console.log('onClickChild')
+        alert('onClick Child')
     }
 
     render() {
         return (
-            <div style={style} onClickCapture={this.onClickParent.bind(this)}>
-                <div style={style} onClick={this.onClickChild.bind(this)}></div>
-            </div>
+            <>
+                부모에 onClickCapture
+                <div style={style} onClickCapture={this.onClickParent.bind(this)}>
+                    <div style={style} onClick={this.onClickChild.bind(this)}></div>
+                </div>
+                
+                모두 onClick
+                <div style={style} onClick={this.onClickParent.bind(this)}>
+                    <div style={style} onClick={this.onClickChild.bind(this)}></div>
+                </div>
+
+                지식에 onClickCapture
+                <div style={style} onClick={this.onClickParent.bind(this)}>
+                    <div style={style} onClickCapture={this.onClickChild.bind(this)}></div>
+                </div>
+
+                모두 onClickCapture
+                <div style={style} onClickCapture={this.onClickParent.bind(this)}>
+                    <div style={style} onClickCapture={this.onClickChild.bind(this)}></div>
+                </div>                
+            </>
         )
     }
 }

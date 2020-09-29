@@ -17,7 +17,7 @@ export default class UseMemoContainer extends Component {
 
 class UseMemoChild extends Component {
     renderList(itemList) {
-        itemList.map(item => )
+        // itemList.map(item => )
     }
 
     return() {
