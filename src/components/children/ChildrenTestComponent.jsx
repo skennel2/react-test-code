@@ -1,10 +1,13 @@
-import React, { Component } from 'react'
+import React, { Children, Component } from 'react'
 
 export default class ChildrenTestComponent extends Component {
     render() {
         return (
             <div>
-
+                <HasChildren>
+                    <Children value={'Hello'}/>
+                    <Children value={'World'}/>
+                </HasChildren>
             </div>
         )
     }
@@ -12,7 +15,6 @@ export default class ChildrenTestComponent extends Component {
 
 class HasChildren extends Component {
     render() {
-        console.log(this.props.children);
         return (
             <div>
                 {this.props.children}
@@ -25,7 +27,7 @@ class Children extends Component {
     render() {
         return (
             <div>
-
+                {this.props.value}
             </div>
         )
     }

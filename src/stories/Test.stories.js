@@ -11,7 +11,7 @@ import PropTypesTestClient, { HasPropTypesComponent } from '../components/propTy
 import PureComponentContainer from '../components/PureComponent/PureComponentContainer';
 import ContextProvider from '../components/context/ContextProvider';
 import StateComponentProblem from '../components/etc/StateComponentProblem';
-import CssChangeClient from '../components/LifeCycle/CssChange';
+import LifeCycleTest from '../components/LifeCycle/LifeCycleTest';
 
 export default {
     title: '테스트',
@@ -101,7 +101,7 @@ export const LifeCycle = () => {
 
 export const CssChange = () => {
     return (
-        <CssChangeClient />
+        <LifeCycleTest />
     )
 }
 
