@@ -12,6 +12,7 @@ import PureComponentContainer from '../components/PureComponent/PureComponentCon
 import ContextProvider from '../components/context/ContextProvider';
 import StateComponentProblem from '../components/etc/StateComponentProblem';
 import LifeCycleTest from '../components/LifeCycle/LifeCycleTest';
+import ChildrenTestComponent from '../components/children/ChildrenTestComponent';
 
 export default {
     title: '테스트',
@@ -21,6 +22,12 @@ export default {
     //     info: {},
     //     componentSubtitle: 'OBTButton 기본적인 버튼 컴포넌트입니다.'
     // }
+};
+
+export const ChildrenTestComponentTest = () => {
+    return (
+        <ChildrenTestComponent />
+    );
 };
 
 export const RefAsPropTestComponentTest = () => {

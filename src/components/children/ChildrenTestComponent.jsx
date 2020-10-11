@@ -1,13 +1,19 @@
-import React, { Children, Component } from 'react'
+import React, { Component } from 'react'
 
 export default class ChildrenTestComponent extends Component {
     render() {
         return (
             <div>
                 <HasChildren>
-                    <Children value={'Hello'}/>
-                    <Children value={'World'}/>
+                    <Children value={'Hello'} />
+                    <Children value={'World'} />
                 </HasChildren>
+
+                
+                <Children value={'Hello'}>
+                    {/* 특별한 에러없이 렌더링되지 않는다. */}
+                    <Children value={'world'} />
+                </Children>
             </div>
         )
     }
