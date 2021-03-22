@@ -16,11 +16,11 @@ export default class TestClient extends Component {
                 <div style={{
                     display: this.state.display
                 }}>
-                    <WillChangeDisplay></WillChangeDisplay>
+                    <ChangeDisplayStyle></ChangeDisplayStyle>
                 </div>
 
                 <div>
-                    {this.state.show ? (<WillRemoveDom></WillRemoveDom>) : null}
+                    {this.state.show ? (<RemoveComponent></RemoveComponent>) : null}
                 </div>
             </>
         )
@@ -31,7 +31,7 @@ export default class TestClient extends Component {
  * 부모의 css 스타일에 따라 자식의 display가 바뀔때 자식의 생명주기에 영향이 있는지 테스트
  * 결론: 영향없다.
  */
-class WillChangeDisplay extends Component {
+class ChangeDisplayStyle extends Component {
     componentDidMount() {
         alert('WillChangeDisplay mount')
     }
@@ -56,7 +56,7 @@ class WillChangeDisplay extends Component {
  * 부모에서 컴포넌트가 제거될때 생명주기 테스트
  * 결론: 제거될때 unmount, 다시 보여질때 mount
  */
-class WillRemoveDom extends Component {
+class RemoveComponent extends Component {
     componentDidMount() {
         alert('WillRemoveDom mount')
     }

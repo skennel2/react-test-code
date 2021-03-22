@@ -82,8 +82,9 @@ export class LifeCycleTestComponent extends Component {
     }
 
     /**
-     * render 호출이후에 호출 
+     * render 호출 이후에 호출 
      * 여기선 this.props 와 this.state의 값이 변경되어있다.
+     * props나 state가 변경되어 다시 렌더링될때 render함수 이후 호출된다.
      * @param {} prevProps 
      * @param {*} prevState 
      * @param {*} snapshot 
