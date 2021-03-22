@@ -4,7 +4,7 @@ import RefAsPropTestComponent from '../components/ref_as_prop/RefAsPropTestCompo
 import NumberPrinterWithPrefix from '../components/RenderProps/NumberPrinterWithPrefix';
 import RefTestComponent from '../components/ref/RefTestComponent';
 import LifeCycleClient from '../components/LifeCycle/LifeCycleClient';
-import ExceptionHandling from '../components/ExceptionHandling/ExceptionHandling';
+import ExceptionHandlingOldWay from '../components/ExceptionHandling/ExceptionHandlingOldWay';
 import SyntheticEventTestComponent from '../components/Event/SyntheticEventTestComponent';
 import ChangePropsProblem from '../components/etc/ChangePropsProblem';
 import PropTypesTestClient, { HasPropTypesComponent } from '../components/propTypes/PropTypesClient';
@@ -55,7 +55,7 @@ export const PureComponent = () => {
 
 export const 예외처리 = () => {
     return (
-        <ExceptionHandling />
+        <ExceptionHandlingOldWay />
     )
 }
 

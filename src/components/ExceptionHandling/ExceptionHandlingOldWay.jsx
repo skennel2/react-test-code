@@ -1,16 +1,14 @@
 import React, { Component } from 'react'
 
-export default class ExceptionHandling extends Component {
+export default class ExceptionHandlingOldWay extends Component {
     state = {
         error: false
     }
 
     componentDidCatch(error, info) {
-        this.setState(
-            {
-                error: true
-            }
-        )
+        this.setState({
+            error: true
+        })
     }
 
     render() {

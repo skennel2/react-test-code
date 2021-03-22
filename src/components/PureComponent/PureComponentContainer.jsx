@@ -98,6 +98,24 @@ export default class TestClient extends Component {
                         normarObjectValue={this.state.normarObjectValue}
                         callBack={(e) => { }}
                     />
+
+
+
+                    <div
+                        onMouseEnter={() => {
+                            alert('enter')
+                        }} onMouseLeave={() => {
+                            alert('leave')
+                        }}
+                        onMouseOut={() => {
+                            alert('out')
+                        }}>
+                        <button style={{
+                            pointerEvents: 'none'
+                        }} disabled={true} onMouseLeave={() => {
+                            alert('button leave')
+                        }}>dfdf</button>
+                    </div>
                 </div>
             </div>
         )
