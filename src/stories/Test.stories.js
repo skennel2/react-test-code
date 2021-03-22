@@ -13,6 +13,7 @@ import ContextProvider from '../components/context/ContextProvider';
 import StateComponentProblem from '../components/etc/StateComponentProblem';
 import LifeCycleTest from '../components/LifeCycle/LifeCycleTest';
 import ChildrenTestComponent from '../components/children/ChildrenTestComponent';
+import SetStateTest from '../components/setState/SetStateTest';
 
 export default {
     title: '테스트',
@@ -109,6 +110,12 @@ export const LifeCycle = () => {
 export const CssChange = () => {
     return (
         <LifeCycleTest />
+    )
+}
+
+export const SetState = () => {
+    return (
+        <SetStateTest />
     )
 }
 

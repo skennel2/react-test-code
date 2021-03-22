@@ -4,11 +4,16 @@ import PropTypes from 'prop-types'
 export default class RefAsPropTestComponent extends Component {
     myRef = React.createRef();
 
+    // state = {
+    //     stateRef = React.createRef()
+    // }
+
     render() {
         return (
             <ChildComponent
                 ref={this.myRef}
                 myRef={this.myRef}
+                // stateRef={this.state.stateRef}
             />
         )
     }
@@ -22,6 +27,9 @@ class ChildComponent extends Component {
 
         // TODO: null이 리턴된다. 
         console.log(this.props.myRef)
+
+        // // TODO: null이 리턴된다. 
+        // console.log(this.props.stateRef)
         return (
             <div>
                 Hello
