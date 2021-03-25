@@ -14,6 +14,7 @@ import StateComponentProblem from '../components/etc/StateComponentProblem';
 import LifeCycleTest from '../components/LifeCycle/LifeCycleTest';
 import ChildrenTestComponent from '../components/children/ChildrenTestComponent';
 import SetStateTest from '../components/setState/SetStateTest';
+import RefsetStateCallback from '../components/ref/RefsetStateCallback';
 
 export default {
     title: '테스트',
@@ -118,6 +119,13 @@ export const SetState = () => {
         <SetStateTest />
     )
 }
+
+export const ref = () => {
+    return (
+        <RefsetStateCallback />
+    )
+}
+
 
 // 기본적인예제.story = {
 //     decorators: [withKnobs],
