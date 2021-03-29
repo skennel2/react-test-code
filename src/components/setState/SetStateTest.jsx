@@ -23,11 +23,21 @@ export default class SetStateTest extends Component {
                 }}>
                     부모 state 변경
                 </button>
-                <SetStateChild onChange={() => {
-                    this.setState({
-                        toggleRender: !this.state.toggleRender
-                    })
-                }} />
+                <SetStateChild
+                    value={this.state.toggleRender}
+                    onChange={() => {
+                        this.setState({
+                            toggleRender: !this.state.toggleRender
+                        })
+                    }}
+                    onChangeAsync={() => {
+                        setTimeout(() => {
+                            this.setState({
+                                toggleRender: !this.state.toggleRender
+                            })
+                        })
+                    }}
+                />
             </>
         )
     }
@@ -40,12 +50,15 @@ class SetStateChild extends Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        console.log(this.state)
+        console.log(this.state, this.props)
     }
 
     render() {
         return (
             <>
+                <div>
+                    {this.props.value ? 'true' : 'false'}
+                </div>
                 <div>
                     <button onClick={() => {
                         this.setState({
@@ -96,21 +109,45 @@ class SetStateChild extends Component {
                 </div>
 
                 {/*
-                    이 케이스에서도 componentDidUpdate는 한번만 호출 
+                    setState 중간에 props으로 받은 콜백을 호출하고 이 콜백에서는 부모의 setState가 진행된다.
+                    이 케이스에서도 componentDidUpdate는 한번만 호출
                 */}
                 <div>
                     <button onClick={() => {
                         this.setState({
-                            stringValue: '1'
+                            stringValue: this.state.stringValue + '1'
                         })
 
                         this.props.onChange();
 
                         this.setState({
-                            numberValue: 11
+                            numberValue: this.state.numberValue + 1
                         })
                     }}>
                         이벤트 콜백 중간에 onChange로 부모 state 변경
+                    </button>
+                    <div>
+                        {this.state.numberValue}, {this.state.stringValue}
+                    </div>
+                </div>
+
+                {/*
+                    onChangeAsync에서 비동기로 setState를 호출하고 있다. 
+                    이 케이스에서 componentDidUpdate는 두번 호출
+                */}
+                <div>
+                    <button onClick={() => {
+                        this.setState({
+                            stringValue: this.state.stringValue + '1'
+                        })
+
+                        this.props.onChangeAsync();
+
+                        this.setState({
+                            numberValue: this.state.numberValue + 1
+                        })
+                    }}>
+                        이벤트 콜백 중간에 onChange로 부모 state 비동기로 변경
                     </button>
                     <div>
                         {this.state.numberValue}, {this.state.stringValue}
